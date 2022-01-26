@@ -121,10 +121,20 @@
     transform:scaleY(1.2);
 
   }
+
+  #con{
+    /* From https://css.glass */
+background: rgba(15, 1, 1, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(228, 217, 217, 0.3);
+  }
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
  <img src="lg.png" alt="xyz" height="50" width="100">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,8 +159,8 @@
             Login
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="signup.php">Customer</a></li>
-            <li><a class="dropdown-item" href="#">Employee</a></li>
+            <li><a class="dropdown-item" href="signin.html">Customer</a></li>
+            <li><a class="dropdown-item" href="signin.html">Employee</a></li>
             
           </ul>
         </li>
@@ -158,14 +168,14 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success btn-light" type="submit">Search</button>
+        <button class="btn btn-outline-success btn-primary text-white" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
 
   <!---------------------------carousel section-------------------------------------------->
-  <div class="container">
+  <div class="container ">
   <div class="row px-2" >
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner"style="height:80vh;">
@@ -203,7 +213,7 @@
           <div class="card-body">
             <h5 class="card-title">Current account</h5>
             <p class="card-text">A current account, also known as financial account is a type of deposit account maintained by individuals who carry out significantly higher number of transactions with banks on a regular basis. I</p>
-            <a href="#" class="btn btn-primary">create account</a>
+            <a href="signup.php" class="btn btn-primary">create account</a>
           </div>
         </div>
             </div>
@@ -214,7 +224,7 @@
             <h5 class="card-title">saving account</h5>
             <p class="card-text">
               A savings account is a deposit account you hold with a bank. This is an interest-bearing account and although these kinds of accounts do not have high interest rate, it is the reliability and safety which make them a good option for saving your money.</p>
-            <a href="#" class="btn btn-primary">create account</a>
+            <a href="signup.php" class="btn btn-primary">create account</a>
           </div>
         </div>
             </div>
@@ -227,14 +237,14 @@
               Search instead for fixedseposit account
               Image result for fixed deposit account
               A fixed deposit, also known as an FD, is an investment instrument offered by banks, as well as non-banking financial companies (NBFC) to their customers to help them save money.</p>
-            <a href="#" class="btn btn-primary">create account</a>
+            <a href="signup.php" class="btn btn-primary">create account</a>
           </div>
         </div>
             </div>
           </div>
     </div>
      <!----------------------------loan section------------------------------------------------>
-     <div class="container-fluid mar" id="ser">
+     <div class="container-fluid  mar" id="ser">
         <p class="h1 text-center">Services</p>
         <br>
     <div class="service">
@@ -253,21 +263,20 @@
         </div>
       
          <!---------------------------message section-------------------------------------------->
-    <div class="container  bg-light my-2 " id="con">
+    <div class="container  my-2 " id="con">
         <p class="h1 text-center my-5 ">Contact us</p>
-        <form class="my-3 text-center">
-      <input type="text" placeholder="First name" name="firstname" required> <br>
-      <br><input type="text" placeholder="Last name" name="lastname" required><br><br><br>
-          <input type="email" name="email" placeholder="E-mail" required> <br><br>
+        <form class="my-3 text-center"id="conn">
+      <input type="text" placeholder="First name" required> <br><br><input type="text" placeholder="Last name" required><br><br><br>
+          <input type="email" placeholder="E-mail" required> <br><br>
       
-          <textarea name="message"  placeholder="message" id="" cols="30" rows="10" style="resize:none;"required></textarea><br><br>
+          <textarea name="mesage" placeholder="message" id="" cols="30" rows="10" style="resize:none;"required></textarea><br><br>
        <button class="button bg-primary my-4" style="padding:10px;outline:none;border:none;color:white;">send message</button> 
           
         </form>
       </div>
       <!-- Footer -->
 
-      <footer class="page-footer font-small blue pt-4 bg-primary">
+      <footer class="page-footer font-small blue pt-4 bg-dark">
       
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -343,7 +352,7 @@
       
         <!-- Copyright -->
         <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
-          <a href="https://mdbootstrap.com/"> XYZ BAnk Limited</a>
+          <a href="https://mdbootstrap.com/"> XYZ BAnk Limited</a> crafted by prajwol lama &sagar khadka.
         </div>
         <!-- Copyright -->
       

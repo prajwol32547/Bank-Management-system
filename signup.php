@@ -1,119 +1,134 @@
 <html>
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Sign up</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sign up</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-        <body>
-        
-        <div class="signup-page" id="profile" >
-          <center class="m-4"><h4>Add New Customer</h4></center>
 
-          <form class="signup-form" action="create-account.php" method="post" enctype="multipart/form-data">
-              <div class="column">
-                <label>Firstname</label>
-                <input type="text" class="input-field" name="firstname" required>
-              </div>
-              <div class="column">
-                <label>Middlename</label>
-                <input type="text" class="input-field" name="middlename" required>
-              </div>
-              <div class="column">
-                <label>Lastname</label>
-                <input type="text" class="input-field" name="lastname" required>
-              </div>
-              <div class="column">
-                <label>Fathername</label>
-                <input type="text" class="input-field" name="fathername" required>
-              </div>
-              <div class="column">
-                <label>Email</label>
-                <input type="email" class="input-field" name="email" required>
-              </div>
-              <div class="column">
-                <label>Mobile Number</label>
-                <input type="number" class="input-field" name="mobilenumber" required>
-              </div>
-             
-              <div class="column">
-                <label>Date Of Birth</label>
-                <input type="date" class="input-field" name="dateofbirth" required>
-              </div>
-              <div class="column">
+<body>
 
-                <label>Account Number (Don't Edit)</label>
-                <input type="number" class="input-field" value="<?php echo rand(); ?>" name="accountnumber">
-              </div>
-              <div class="column">
-                <label>Account Balance</label>
-                <input type="number" class="input-field" value="200" name="accountbalance">
-              </div>
-              
-              <div class="column">
-                <label>City</label>
-                <input type="text" class="input-field" name="city" required>
-              </div>
-              
-              <div class="column">
-                <label>District</label>
-                <input type="text" class="input-field" name="district" required>
-              </div>
-              <div class="column">
-                <label>pincode</label>
-                <input type="number" class="input-field" name="pincode" required>
-              </div>
-              <div class="column">
-                      <label  required>Select state</label>
-                              <select class="form-select" name="state">
-                                    <option selected>Select State</option>
-                                    <option value="Province 1">Province 1</option>
-                                    <option value="Province 2">Province 2</option>
-                                    <option value="Province 3">Province 3</option>
-                                    <option value="Province 4">Province 4</option>
-                                    <option value="Province 5">Province 5</option>
-                                    <option value="Province 6">Province 6</option>
-                                    <option value="Province 7">Province 7</option>
-                            </select>
-            </div> 
+  <div class="signup-page" id="profile">
+    <h2 class="create">Add New Customer</h2>
 
-            <div class="column">
-                <div class="form-check">
-                      <input  type="radio" value="Male" name="gender" >
-                      <label for="gender">Male</label>
-                </div>
-                <div class="form-check">
-                      <input  type="radio" value="Female" name="gender" >
-                      <label for="gender">Female</label>
-                </div>
-            </div>
-
-              <div class="column">
-                    <input type="submit" name="addcustomer" >
-              </div>
-              <div class="column">                                                
-                    <input type="reset" name="reset-form">
-              </div>
-          </form>
+    <form class="signup-form" action="create-account.php" method="post" enctype="multipart/form-data">
+      <div class="signup-form-type">
+        <select class="signup-form-type-select form-select" name="signup-form-type">
+          <option>saving account</option>
+          <option>credit account</option>
+          <option>women saving</option>
+        </select>
+      </div>
+      <div class="signup-form-data">
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Firstname</label>
+          <input type="text" class="input-field form-control" name="firstname" required>
         </div>
-<?php
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Middlename</label>
+          <input type="text" class="input-field form-control" name="middlename" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Lastname</label>
+          <input type="text" class="input-field form-control" name="lastname" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Fathername</label>
+          <input type="text" class="input-field form-control" name="fathername" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Email</label>
+          <input type="email" class="input-field form-control" name="email" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Mobile Number</label>
+          <input type="number" class="input-field form-control" name="mobilenumber" required>
+        </div>
 
-        if(isset($_GET['options'])){
 
-            if($_GET['options']=="credit"){
+        <div class="form-items col-sm-4 col-md-3">
 
-                // header("Location: http://localhost/internetBanking/signup.php");
+          <label>Account Number </label>
+          <input type="number" class="input-field form-control" value="1120000" name="accountnumber">
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Account Balance</label>
+          <input type="number" class="input-field form-control" value="200" name="accountbalance">
+        </div>
 
-            }elseif($_GET['options']=="saving"){
+        <div class="form-items col-sm-4 col-md-3">
+          <label>City</label>
+          <input type="text" class="input-field form-control" name="city" required>
+        </div>
 
-              // echo "m";
+        <div class="form-items col-sm-4 col-md-3">
+          <label>District</label>
+          <input type="text" class="input-field form-control" name="district" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>pincode</label>
+          <input type="number" class="input-field form-control" name="pincode" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label required>Select state</label>
+          <select class="form-select" name="state">
+            <option selected>Select State</option>
+            <option value="Province 1">Province 1</option>
+            <option value="Province 2">Province 2</option>
+            <option value="Province 3">Province 3</option>
+            <option value="Province 4">Province 4</option>
+            <option value="Province 5">Province 5</option>
+            <option value="Province 6">Province 6</option>
+            <option value="Province 7">Province 7</option>
+          </select>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Date Of Birth</label>
+          <input type="date" class="input-field form-control" name="dateofbirth" required>
+        </div>
 
-            }
+        <div class="form-items col-sm-4 col-md-3">
+          <div class="form-check">
+            <input type="radio" value="Male" name="gender">
+            <label for="gender">Male</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" value="Female" name="gender">
+            <label for="gender">Female</label>
+          </div>
+        </div>
+      </div>
 
-        }
+      <div class="submitbutton form-items">
+        <input type="submit" name="addcustomer">
+      </div>
+      <div class="resetbutton form-items" >
+        <input type="reset" name="reset-form">
+
+    </form>
+  </div>
+  <?php
+
+  if (isset($_GET['options'])) {
+
+    if ($_GET['options'] == "credit") {
+
+      // header("Location: http://localhost/internetBanking/signup.php");
+
+    } elseif ($_GET['options'] == "saving") {
+
+      // echo "m";
+
+    }
+  }
 
 
-        ?>
-        </body>
-        </html>
+  ?>
+</body>
+
+</html>

@@ -10,9 +10,9 @@ $dbname = "internetBanking";
 $conn = new mysqli($servname, $username, $password, $dbname);
 
 
-$firstname = $_POST["firstname"];
+$accountnumber = $_POST["accountnumber"];
 // echo $firstname;
-$sql = "SELECT *  FROM `newaccount` WHERE `firstname` = '$firstname';";
+$sql = "SELECT *  FROM `verifiedaccount` WHERE `accountnumber` = '$accountnumber';";
 
 $result = $conn->query($sql);
 
