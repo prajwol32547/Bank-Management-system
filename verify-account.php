@@ -26,7 +26,7 @@ $gender =$_POST["gender"];
 
 
 $create = "INSERT INTO `verifiedaccount` (`id`, `firstname`, `lastname`, `middlename`, `fathername`, `email`, `mobilenumber`, `dateofbirth`, `accountnumber`, `accountbalance`, `city`, `district`, `pincode`, `state`,`gender`) VALUES (NULL, '$firstname', '$lastname', '$middlename', '$fathername', '$email', '$mobilenumber', '$newDate', '$accountnumber', '$accountbalance', '$city', '$district', '$pincode', '$state', '$gender')";
-$delete = "DELETE  FROM `newaccount` WHERE `newaccount`.`firstname` = '$firstname' ";
+$delete = "DELETE  FROM `newaccount` WHERE `newaccount`.`accountnumber` = '$accountnumber' ";
 if ($conn->query($create) && $conn->query($delete) === TRUE) {
     // header("Location: http://localhost/internetBanking/index.html");
     
@@ -34,4 +34,7 @@ if ($conn->query($create) && $conn->query($delete) === TRUE) {
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
+
+
+
 ?>
