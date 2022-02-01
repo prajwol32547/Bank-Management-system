@@ -18,7 +18,9 @@ $result = $conn->query($sql);
 
 
 
+
 if (!$accountnumber = "") 
+
 {
   if(mysqli_num_rows($result) >0){ 
     while ($row = $result->fetch_assoc()) {
@@ -32,7 +34,9 @@ if (!$accountnumber = "")
         <div class="signup-page" id="profile" >
     </head>
     <body>
+
           <center class="m-4"><h4>Customer Information</h4></center>
+
 
           <form class="signup-form" action="verify-account.php" method="post" enctype="multipart/form-data">
               <div class="column form-items col-sm-4 col-md-3">

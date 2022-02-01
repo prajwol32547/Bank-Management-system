@@ -1,4 +1,23 @@
 
+<html>
+    <head> 
+        <title>Delete user account</title>
+    </head>
+<body><div style="padding-left:25%; padding-top:5rem;">
+<h1>Delete user account</h1>
+<br><hr>
+<form action="" method="post">
+    Enter the account number:<input class="form-control" type="number" name="accountnumber"><br>
+    Re enter the account number:  <input class="form-control" type="number" name="Reaccountnumber"><br>
+    <input type="submit" value="Delete the user account">
+
+</form>
+<hr>
+</div>
+</body>
+
+</html>
+
 
 
 
@@ -17,11 +36,11 @@ $conn = new mysqli($servname, $username, $password, $dbname);
 $accountnumber= $_POST["accountnumber"];
 $reaccountnumber=$_POST["reaccountnumber"];
 
-echo $accountnumber;
 if($accountnumber !== $reaccountnumber){
     echo "Re typed password isn't same";
 }
 else{
+
 $create = "INSERT INTO `deletedaccount` SELECT * FROM `verifiedaccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber'";
 $delete = "DELETE  FROM `verifiedaccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber' ";
 if ($conn->query($create) && $conn->query($delete) === TRUE) {
@@ -31,4 +50,5 @@ if ($conn->query($create) && $conn->query($delete) === TRUE) {
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
+
 }
