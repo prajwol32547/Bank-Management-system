@@ -30,6 +30,12 @@ CREATE TABLE contact(
    reg_date TIMESTAMP NOT NULL current_timestamp() ON UPDATE current_timestamp()
 );
 
+--@block
+ALTER TABLE `newaccount`
+ADD
+        `reg_date` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT current_timestamp()
+;
+
 CREATE TABLE verifiedaccount(
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         firstname VARCHAR(30) NOT NULL,

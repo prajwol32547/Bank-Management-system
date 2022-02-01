@@ -10,7 +10,7 @@
 <body>
     <div>
 Enter the account number of user:
-<form >
+<form action="search-user-status.php" method="POST" >
 <input type="number" name="accountnumber">
 <button  id="search" >submit</button>
 </form>

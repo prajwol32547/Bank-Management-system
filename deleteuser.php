@@ -1,3 +1,4 @@
+
 <html>
     <head> 
         <title>Delete user account</title>
@@ -20,6 +21,7 @@
 
 
 
+
 <?php
 
 $servername = "localhost";
@@ -33,10 +35,20 @@ $conn = new mysqli($servname, $username, $password, $dbname);
 
 $accountnumber= $_POST["accountnumber"];
 $reaccountnumber=$_POST["reaccountnumber"];
+
 if($accountnumber !== $reaccountnumber){
     echo "Re typed password isn't same";
 }
 else{
-$create = "INSERT INTO `deletededaccount` SELECT * FROM `verifiedaccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber'";
-$delete = "DELETE  FROM `verifiedccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber' ";
+
+$create = "INSERT INTO `deletedaccount` SELECT * FROM `verifiedaccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber'";
+$delete = "DELETE  FROM `verifiedaccount` WHERE `verifiedaccount`.`accountnumber` = '$accountnumber' ";
+if ($conn->query($create) && $conn->query($delete) === TRUE) {
+    // header("Location: http://localhost/internetBanking/index.html");
+    
+
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
 }

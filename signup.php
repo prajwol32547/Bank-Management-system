@@ -52,6 +52,66 @@
 
 
         <div class="form-items col-sm-4 col-md-3">
+          <label>Account Balance</label>
+          <input type="number" class="input-field form-control" value="200" name="accountbalance">
+        </div>
+
+        <div class="form-items col-sm-4 col-md-3">
+          <label>City</label>
+          <input type="text" class="input-field form-control" name="city" required>
+        </div>
+
+        <div class="form-items col-sm-4 col-md-3">
+          <label>District</label>
+          <input type="text" class="input-field form-control" name="district" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>pincode</label>
+          <input type="number" class="input-field form-control" name="pincode" required>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label required>Select state</label>
+          <select class="form-select" name="state">
+            <option selected>Select State</option>
+            <option value="Province 1">Province 1</option>
+            <option value="Province 2">Province 2</option>
+            <option value="Province 3">Province 3</option>
+            <option value="Province 4">Province 4</option>
+            <option value="Province 5">Province 5</option>
+            <option value="Province 6">Province 6</option>
+            <option value="Province 7">Province 7</option>
+          </select>
+        </div>
+        <div class="form-items col-sm-4 col-md-3">
+          <label>Date Of Birth</label>
+          <input type="date" class="input-field form-control" name="dateofbirth" required>
+        </div>
+
+        <div class="form-items col-sm-4 col-md-3">
+          <div class="form-check">
+            <input type="radio" value="Male" name="gender">
+            <label for="gender">Male</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" value="Female" name="gender">
+            <label for="gender">Female</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-items">
+        <input type="submit" class="submitbutton" name="addcustomer">
+      </div>
+      <div class="form-items">
+        <input type="reset" class="resetbutton"  name="reset-form">
+
+    </form>
+  </div>
+  <?php
+
+=======
+
+        <div class="form-items col-sm-4 col-md-3">
 
           <label>Account Number </label>
           <input type="number" class="input-field form-control" value="1120000" name="accountnumber">
@@ -113,6 +173,7 @@
     </form>
   </div>
   <?php
+
 
   if (isset($_GET['options'])) {
 

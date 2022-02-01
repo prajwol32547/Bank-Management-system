@@ -16,7 +16,6 @@ $email = $_POST["email"];
 $mobilenumber =$_POST["mobilenumber"];  
 $dateofbirth =$_POST["dateofbirth"];
 $newDate = date("Y-m-d", strtotime($dateofbirth)); 
-$accountnumber =$_POST["accountnumber"];
 $accountbalance =$_POST["accountbalance"];
 $city =$_POST["city"];
 $district =$_POST["district"];
@@ -26,15 +25,14 @@ $gender =$_POST["gender"];
 
 
 
-$create = "INSERT INTO `verifiedaccount` (`id`, `firstname`, `lastname`, `middlename`, `fathername`, `email`, `mobilenumber`, `dateofbirth`, `accountnumber`, `accountbalance`, `city`, `district`, `pincode`, `state`,`gender`) VALUES (NULL, '$firstname', '$lastname', '$middlename', '$fathername', '$email', '$mobilenumber', '$newDate', '$accountnumber', '$accountbalance', '$city', '$district', '$pincode', '$state', '$gender')";
+$create = "INSERT INTO `newaccount` (`accountnumber`,`firstname`, `lastname`, `middlename`, `fathername`, `email`, `mobilenumber`, `dateofbirth`, `accountbalance`, `city`, `district`, `pincode`, `state`,`gender`) VALUES (NULL,'$firstname', '$lastname', '$middlename', '$fathername', '$email', '$mobilenumber', '$newDate', '$accountbalance', '$city', '$district', '$pincode', '$state', '$gender')";
 
 if ($conn->query($create) === TRUE) {
-    // header("Location: http://localhost/internetBanking/index.html");
+    header("Location: http://localhost/internetBanking/internetBanking/employee.html");
    
     
 
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-    echo $mobilenumber;
   }
 ?>
