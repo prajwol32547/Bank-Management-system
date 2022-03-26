@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Sign up</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <div class="signup-page" id="profile">
@@ -18,7 +18,7 @@
     <center class="m-4">
       <h4>Add New Customer</h4>
     </center>
-    <form action="search.php" method="post">
+    <form action="../content/search.php" method="post">
       <div class="column form-items col-sm-4 col-md-3">
 
         <label>Account Number</label>

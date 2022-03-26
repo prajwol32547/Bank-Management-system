@@ -1,13 +1,7 @@
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "internetBanking";
-
-
-$conn = new mysqli($servname, $username, $password, $dbname);
+require_once "../backend/db.php";
 
 
 $accountnumber = $_POST["accountnumber"];
@@ -25,7 +19,7 @@ if ($accountnumber !== "")
         ?>
         <html>
           <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../styles/style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -34,7 +28,7 @@ if ($accountnumber !== "")
     <body>
           <center class="m-4"><h4>Add New Customer</h4></center>
 
-          <form class="signup-form" action="verify-account.php" method="post" enctype="multipart/form-data">
+          <form class="signup-form" action="../backend/verify-account.php" method="post" enctype="multipart/form-data">
               <div class="column form-items col-sm-4 col-md-3">
                 <label>Firstname</label>
                 <input type="text" class="input-field form-control" name="firstname" value="<?php echo $row['firstname'];?>" required >

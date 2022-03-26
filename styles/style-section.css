@@ -1,0 +1,90 @@
+/* service container*/
+.loan-section {
+    display: block;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    padding: 0 15px;
+    margin-left: 10vh;
+
+}
+
+.row {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-container {
+    overflow: hidden;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.service-card {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25;
+    min-width: 300px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    margin: 15px auto;
+    max-height:25rem;
+}
+
+.border {
+    border: 2px solid #cfcfcf;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    box-shadow:2px 2x 3px #8b8d8f;
+}
+
+.service-card-image-wrapper {
+    overflow: hidden; 
+    height: 10rem;
+    margin-bottom: 10px;
+    width: 100%;
+    
+}
+.service-card-image{
+    height: 10rem;
+    max-width: 330px;
+    width:100%;
+    background-position: center;
+    transition: all 1s ease;
+
+}
+.service-card-image:hover{
+    transform: scale(1.5);
+}
+.img{
+    max-width: 300px;
+}
+.containers{
+    overflow: hidden;
+}
+.service-card-content{
+    padding: .75rem;
+}
+
+
+@media screen  and(max-width: 719px ){
+.service-card{
+    padding-left:20px ;
+    padding-right: 20px;
+}
+}

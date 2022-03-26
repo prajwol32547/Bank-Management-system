@@ -1,12 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "internetBanking";
-
-
-$conn =new mysqli($servname, $username, $password, $dbname);
+require_once "../backend/db.php";
 
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
