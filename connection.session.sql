@@ -1,6 +1,0 @@
---@block
-CREATE TABLE new 
-(
-sn INT(10)  NOT NULL,
-gmail VARCHAR(30) PRIMARY KEY NOT NULL
-);
