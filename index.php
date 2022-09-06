@@ -317,7 +317,7 @@ font-family: Arial, Helvetica, sans-serif;
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" target="_blank" href="signin"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;signin</a></li>
-              <li><a class="dropdown-item" href="registrationform.html"><i class="fa fa-user-plus" aria-hidden="true"></i> create account?</a></li>
+              <li><a class="dropdown-item" href="registrationform"><i class="fa fa-user-plus" aria-hidden="true"></i> create account?</a></li>
 
             </ul>
           </li>
@@ -555,7 +555,7 @@ font-family: Arial, Helvetica, sans-serif;
                         <div class="col-md-6">
                             <div class="md-form mb-2">
                                
-                                <input type="text" class="input_field" name="name" required />
+                                <input type="text" class="input_field" name="name" required minlength="3" />
                                 <label for="name" class="">Your name</label>
                             </div>
                         </div>
@@ -564,7 +564,7 @@ font-family: Arial, Helvetica, sans-serif;
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-3">
-                                <input type="text" id="email" name="from_email" class="input_field" required>
+                                <input type="email" id="email" name="from_email" class="input_field" required>
                                 <label for="email" class="">Your email</label>
                             </div>
                         </div>

@@ -3,6 +3,9 @@ if(isset($_POST['btntwo'])){
 $account=$_POST['number'];
  $number=(int)$account;
  include 'connect.php';
+ $sql1="select * From central where id=$number";
+ $res1=$conn->query($sql1);
+ if($res1->num_rows>0){
  $sql="DELETE FROM `central` WHERE `central`.`id` = $number";
  $res=$conn->query($sql);
  if($res){
@@ -15,6 +18,10 @@ $account=$_POST['number'];
 else{
     include 'error.php';
 }
+}
+}
+else{
+    echo "account does not exists";
 }
 }
 

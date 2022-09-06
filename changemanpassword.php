@@ -41,12 +41,14 @@ session_start();
                     <br>
                     <label for="">
                         New password:
-                    </label>
+                    </label><br>
+                     <span class="msg"></span>
                     <input type="password" class="form-control required" name="new" id="inputPassword2"MinLength="8" MaxLength="15" >
 
                     <label for="">
                         <br>
-                        <br>
+                         <span class="msg"></span>
+                        
                         Re-type password:
                     </label>
                     <input type="password" class="form-control required" name="new1" id="inputPassword3" MinLength="8" MaxLength="15">
@@ -72,6 +74,37 @@ session_start();
                 function back(){
                     history.back();
                 }
+                let newl=document.getElementsByName('new')[0];
+            let newn=document.getElementsByName('new1')[0];
+            let mssg=document.getElementsByClassName('msg');
+            let chng=document.getElementsByName('changeme')[0];
+            let regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9_])/;
+            newl.addEventListener('change',()=>{
+
+            if(regex.test(newl.value)==false){
+   
+               mssg[0].innerHTML="password must contain Uppercase Lowercase Number and Special characters";
+               mssg[0].style.color="red";
+               chng.disabled=true;
+            }
+            else{
+                mssg[0].innerHTML="";
+                chng.disabled=false;
+            }
+      })
+            newn.addEventListener('change',()=>{
+
+            if(regex.test(newn.value)==false){
+   
+               mssg[1].innerHTML="password must contain Uppercase Lowercase Number and Special characters";
+               mssg[1].style.color="red";
+               chng.disabled=true;
+            }
+            else{
+                mssg[1].innerHTML="";
+                chng.disabled=false;
+            }
+      })
             </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

@@ -16,7 +16,7 @@ if(isset($_POST['btnone'])||isset($_POST['btntwo'])){?>
           $email=$_POST['email'];
           $sql="SELECT * FROM central where id='$number' OR email='$email'";
           $res=$conn->query($sql);
-          if($res){
+          if($res->num_rows>0){
             while($row=$res->fetch_assoc()){
                 ?>
                 <div class="container overflow-auto">
@@ -55,12 +55,10 @@ if(isset($_POST['btnone'])||isset($_POST['btntwo'])){?>
                 <td><?php echo $row["number"]?></td>
                 <td><?php echo $row["branch"]?></td>
                 <td><?php echo $row["balance"]?></td>
-
                 <td><?php echo $row["interest"]?></td>
                 <td><?php echo $row["accounttype"]?></td>
                 <td><?php echo $row["citizenshipnumber"]?></td>
                 <td><?php echo $row["fathersname"]?></td>
-                <td><?php echo $row["permun"]?></br> <?php echo $row["perward"]?></br> <?php echo $row["pertole"]?></td>
                 <td><?php echo $row["tmun"]?></br> <?php echo $row["tward"]?></br> <?php echo $row["ttole"]?></td>
                 <td><button type="button" class="btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View photo</td>
                 
@@ -110,7 +108,7 @@ if(isset($_POST['btnone'])||isset($_POST['btntwo'])){?>
             }
             
             else{
-              echo "The acccount you are searching is no available in the database";
+              echo "The acccount you are searching is not available in the database";
             }
 
             ?>

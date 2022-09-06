@@ -10,7 +10,13 @@ $receiverlast=$_POST['receiverlast'];
  $sender=$_SESSION['fname'].' '.$_SESSION['lname'];
  $id=$_SESSION['account'];
  
-include 'connect.php';
+ if(is_numeric($amount)=="" || is_numeric($account)==""){
+  echo "</br>"."You have tried to put string in numeric field please go back and proceed after entering details in correct format";
+ }
+ if(is_string($receiverfirst)=="" || is_string($receiverlast)==""){
+  echo "</br>"."name must be string please go back and proceed after entering details in correct format";
+ }
+ include 'connect.php';
 if($id==$account){
   echo "self transfer is not allowed";
 }
@@ -20,8 +26,8 @@ else if((int)$amount<0 || (int)$amount>$blcdata){
 else{
 $sql="SELECT * FROM central WHERE logid='$account' AND fname='$receiverfirst' AND lname='$receiverlast'";
 $res=$conn->query($sql);
-if(!$res){
-  echo "error";
+if(!$res->num_rows>0){
+  echo "Please make sure account number are matched with the user name";
 }
 else{
   while($row=$res->fetch_assoc()){
@@ -50,6 +56,7 @@ else{
     }
 }
 }
+
 
 }
 

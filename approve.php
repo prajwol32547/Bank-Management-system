@@ -21,11 +21,6 @@ $profession=$row["profession"];
 $soi=$row["sourceofincome"];
 $branch=$row["branch"];
 $acctype=$row["accountype"];
-$perprovince=$row["permanentprovince"];
-$perdistrict=$row["permanentdistrict"];
-$permun=$row["permanentmun"];
-$perward=$row["permanentward"];
-$pertole=$row["permanenttole"];
 $tprovince=$row["temporaryprovince"];
 $tdistrict=$row["temporarydistrict"];
 $tmun=$row["temporarymun"];
@@ -33,7 +28,7 @@ $tward=$row["temporaryward"];
 $ttole=$row["temporarytole"];
 $ibank=$row["ibank"];
 
-$sql1=$sql="INSERT INTO `central` (`fname`, `mname`, `lname`, `email`,`number`,`accounttype`,`intdate`, `branch`, `date`, `logid`, `image`, `citizenshipnumber`, `citizenship`, `fathersname`, `fathercitizenship`,`dob`, `perprovince`, `perdistrict`, `permun`, `perward`, `pertole`, `tprovince`, `tdistrict`, `tmun`, `tward`, `ttole`, `loanid`, `ibank`) VALUES ( '$fname', '$mname', '$lname', '$email',$number,'$acctype',current_timestamp(), '$branch', current_timestamp(), ' ', '$recentphoto', '$citizennumber', '$citizen', '$fathername', '$fathercitizen', '$dob','$perprovince', '$perdistrict', '$permun', $perward, '$pertole', '$tprovince', '$tdistrict', '$tmun', $tward, '$ttole', '', '$ibank'); ";
+$sql1=$sql="INSERT INTO `central` (`fname`, `mname`, `lname`, `email`,`number`,`accounttype`,`intdate`, `branch`, `date`, `logid`, `image`, `citizenshipnumber`, `citizenship`, `fathersname`, `fathercitizenship`,`dob`, `tprovince`, `tdistrict`, `tmun`, `tward`, `ttole`, `loanid`, `ibank`) VALUES ( '$fname', '$mname', '$lname', '$email',$number,'$acctype',current_timestamp(), '$branch', current_timestamp(), ' ', '$recentphoto', '$citizennumber', '$citizen', '$fathername', '$fathercitizen', '$dob', '$tprovince', '$tdistrict', '$tmun', $tward, '$ttole', '', '$ibank'); ";
 $res1=$conn->query($sql1);
 if($res1){
 if($ibank=="yes"){
@@ -55,7 +50,7 @@ if($ibank=="yes"){
  $sql2="DELETE FROM unverifiedaccount WHERE id = $id";
  $res2=$conn->query($sql2);
  if($res2){
-        $message="Your account was succesfully activated."."\n". "If you have chosen internet banking facility you can login via Email='your email' and password='your number'."."\n"." please change your credentials after your first login." ;
+        $message="Your account was succesfully activated."."\n"."\n". "If you have chosen internet banking facility you can login via Email='your email' and password='your number'."."\n"."\n|"." please change your credentials after your first login." ;
         $to = $email;
         $subject = "Account activation";
         $txt = $message;

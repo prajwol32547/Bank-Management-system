@@ -50,7 +50,7 @@
                 <td><?php echo $row["accountype"]?></td>
                 <td><?php echo $row["citizennumber"]?></td>
                 <td><?php echo $row["fathername"]?></td>
-                <td><?php echo $row["permanentmun"]?></br> <?php echo $row["permanentward"]?></br> <?php echo $row["permanenttole"]?></td>
+            
                 <td><?php echo $row["temporarymun"]?></br> <?php echo $row["temporaryward"]?></br> <?php echo $row["temporarytole"]?></td>
                 <td><button type="button" class="btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     view photo

@@ -61,6 +61,24 @@
        
 
     </form>
+    <script>
+        let sdate=document.getElementsByName('date')[0];
+        sdate.addEventListener("change", () => {
+                let d = new Date();
+                let m = d.getMonth() + 1 < 10 ? "0" + (d.getMonth() + 1) : "" + d.getMonth();
+                let dd = d.getDate() < 10 ? "0" + d.getDate() : "" + d.getDate();
+                let string = `${d.getFullYear()}-${m}-${dd}`;
+
+                if (sdate.value > string) {
+                    sdate.disabled = true;
+                    sdate.value = "";
+                    alert("you cannot pick the date beyond today \n Retry after 3 sec");
+                    setTimeout(() => {
+                        sdate.disabled = false;
+                    }, 3000);
+                }
+            });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 

@@ -43,7 +43,7 @@ session_start();
                     <label for="">
                         New password:
                         <br>
-                         <span id="msg"></span>
+                         <span class="msg"></span>
 
                     </label>
                     <input type="password" class="form-control required" required name="new" id="inputPassword2" MinLength="8" MaxLength="15">
@@ -52,9 +52,11 @@ session_start();
                         <br>
                         <br>
                         Re-type password:
+                        <br>
+                        <span class="msg"></span>
                     </label>
                     <input type="password" class="form-control required"  required name="new1" id="inputPassword3"MinLength="8" MaxLength="15">
-
+                       
                     <br>
                     <br>
                     <div class="row text-center">
@@ -74,26 +76,39 @@ session_start();
             <script>
                 let btn=document.getElementById('cancel');
                 btn.addEventListener('click',()=>{
-location.replace('customer');
+                location.replace('customer');
                 });
             let newl=document.getElementsByName('new')[0];
-            let mssg=document.getElementById('msg');
+            let newn=document.getElementsByName('new1')[0];
+            let mssg=document.getElementsByClassName('msg');
             let chng=document.getElementsByName('changeme')[0];
- let regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9_])/;
+            let regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9_])/;
             newl.addEventListener('change',()=>{
 
             if(regex.test(newl.value)==false){
    
-                mssg.innerHTML="password must contain Uppercase Lowercase Number and Special characters";
-               mssg.style.color="red";
-                chng.disabled=true;
+               mssg[0].innerHTML="password must contain Uppercase Lowercase Number and Special characters";
+               mssg[0].style.color="red";
+               chng.disabled=true;
             }
             else{
-                mssg.innerHTML="";
-                 chng.disabled=false;
+                mssg[0].innerHTML="";
+                chng.disabled=false;
             }
       })
-            
+            newn.addEventListener('change',()=>{
+
+            if(regex.test(newn.value)==false){
+   
+               mssg[1].innerHTML="password must contain Uppercase Lowercase Number and Special characters";
+               mssg[1].style.color="red";
+               chng.disabled=true;
+            }
+            else{
+                mssg[1].innerHTML="";
+                chng.disabled=false;
+            }
+      })
             
           
             </script>

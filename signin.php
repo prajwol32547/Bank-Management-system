@@ -36,7 +36,7 @@
  			 		</label>
  			 	</div>
  			 	<button type="submit" class="submit-btn">Login</button>
- 			 	<p><a href="#" class="register-btn">Register</a> | <a href="#" class="lost-pass-btn">Lost Your Password ?</a></p>
+ 			 	
             </form>
  			 </div>
  			 <!-- Login form End -->
@@ -57,7 +57,7 @@
                     </label>
                 </div>
                 <button type="submit" class="submit-btn">Login</button>
-                <p><a href="#" class="register-btn">Register</a> | <a href="forgotpasswordotp" class="lost-pass-btn">Lost Your Password ?</a></p>
+                <p><a href="registrationform.html" class="register-btn">Register</a> | <a href="forgotpasswordotp" class="lost-pass-btn">Lost Your Password ?</a></p>
                 </form>
  			 </div>
  			 <!-- Register form End -->

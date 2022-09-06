@@ -1,3 +1,94 @@
+<?php
+$provinces = array(
+                "bagmati",
+                "gandaki",
+                "karnali",
+                "lumbini",
+                "province1",
+                "province2",
+                "sudurpaschim"
+            );
+
+$districts = array(
+					"achham",
+					"arghakhanchi",
+					"baglung",
+					"baitadi",
+					"bajhang",
+					"bajura",
+					"banke",
+					"bara",
+					"bardiya",
+					"bhaktapur",
+					"bhojpur",
+					"chitwan",
+					"dadeldhura",
+					"dailekh",
+					"dang deukhuri",
+					"darchula",
+					"dhading",
+					"dhankuta",
+					"dhanusa",
+					"dholkha",
+					"dolpa",
+					"doti",
+					"gorkha",
+					"gulmi",
+					"humla",
+					"ilam",
+					"jajarkot",
+					"jhapa",
+					"jumla",
+					"kailali",
+					"kalikot",
+					"kanchanpur",
+					"kapilvastu",
+					"kaski",
+					"kathmandu",
+					"kavrepalanchok",
+					"khotang",
+					"lalitpur",
+					"lamjung",
+					"mahottari",
+					"makwanpur",
+					"manang",
+					"morang",
+					"mugu",
+					"mustang",
+					"myagdi",
+					"nawalparasi",
+					"nuwakot",
+					"okhaldhunga",
+					"palpa",
+					"panchthar",
+					"parbat",
+					"parsa",
+					"pyuthan",
+					"ramechhap",
+					"rasuwa",
+					"rautahat",
+					"rolpa",
+					"rukum",
+					"rupandehi",
+					"salyan",
+					"sankhuwasabha",
+					"saptari",
+					"sarlahi",
+					"sindhuli",
+					"sindhupalchok",
+					"siraha",
+					"solukhumbu",
+					"sunsari",
+					"surkhet",
+					"syangja",
+					"tanahu",
+					"taplejung",
+					"terhathum",
+					"udayapur"
+                
+            );
+
+?>
 <html>
 
 <head>
@@ -56,8 +147,10 @@
   
   
 }
-#sec2{
- display: none;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 </style>
 </head>
@@ -79,53 +172,59 @@
     <div class="row g-3 py-0 ">
     <div class="col-md-4">
       <label for="firstname" class="form-label" >Firstname</label>
-      <input type="text" class="form-control" name="fname" required>
+      <input type="text" class="form-control" autocomplete="off" name="fname" required minlength="3" maxlength="8" required>
       <span class="error"></span>
        
     </div>
     <div class="col-md-4">
       <label for="mnamw" class="form-label">Middlename</label>
-      <input type="text" class="form-control" name="mname" >
+      <input type="text" class="form-control" autocomplete="off" name="mname" >
       <span class="error"></span>
     </div>
     <div class="col-md-4">
       <label for="lname" class="form-label">Lastname</label>
-      <input type="text" class="form-control" minlength="3" name="lname">
+      <input type="text" class="form-control" autocomplete="off" minlength="3" name="lname" required>
       <span class="error"></span>
     </div>
     
     <div class="col-md-4">
       <label for="inputAddress" class="form-label">Number</label>
-      <input type="number" class="form-control" name="number" maxlength="10" placeholder="9880343223"  >
-      <span class="error"></span>
+      <input type="number" class="form-control" autocomplete="off" name="number"  min="9000000000" max="9999999999" placeholder="9880343223"  required>
+      
     </div>
     <div class="col-md-4">
       <label for="inputAddress1" class="form-label">Email</label>
-      <input type="email" class="form-control" name="email" placeholder="ram@gmail.com">
+      <input type="email" class="form-control" autocomplete="off" name="email" placeholder="ram@gmail.com" required>
+        
     </div>
     <div class="col-md-4">
       <label for="dob" class="form-label">Date Of Birth(AD)</label>
-      <input type="date" class="form-control" name="dob" placeholder="1009-01-11">
+      <input type="date" class="form-control" autocomplete="off" name="dob" required placeholder="1009-01-11">
     </div>
     <div class="col-md-4">
       <label for="" class="form-label">Recent pp size photo</label>
-      <input type="file" class="form-control" name="ppphoto">
+      <input type="file" class="form-control" autocomplete="off" name="ppphoto" required >
+        <span class="error"></span>
     </div>
     <div class="col-md-4">
       <label for="inputfather" class="form-label">Fathers name(full)</label>
-      <input type="text" class="form-control" name="fathername" minlength="3">
+      <input type="text" class="form-control" autocomplete="off" name="fathername" minlength="3" required>
+        <span class="error"></span>
     </div>
     <div class="col-md-4">
       <label for="inputState" class="form-label">Fathers citizenship</label>
-      <input type="file" class="form-control" name="fcitizen">
+      <input type="file" class="form-control" autocomplete="off" name="fcitizen">
+        <span class="error"></span>
     </div>
     <div class="col-md-4">
       <label for="inputZip" class="form-label">Citizenship (yours)</label>
-      <input type="file" class="form-control" name="citizen">
+      <input type="file" class="form-control" autocomplete="off"  name="citizen" required>
+        <span class="error"></span>
     </div>
     <div class="col-md-2">
       <label for="inputcip" class="form-label">Citizenship number</label>
-      <input type="text" class="form-control" name="cnumber">
+      <input type="text" class="form-control" autocomplete="off" name="cnumber" required>
+       
     </div>
     <div class="col-md-6">
       <label for="inputState" class="form-label">Profession</label>
@@ -167,26 +266,37 @@
     </div>
   <label for="" class="form-label"><b>(Temporary Address)</b></label>
   
-  <div class="col-md-4">
-    <label for="firstname" class="form-label">Province </label>
-    <input type="text" class="form-control" id="tprovince" name="tprovince" required placeholder="bagmati">
-  </div>
-  <div class="col-md-4">
-    <label for="mnamw" class="form-label">District</label>
-    <input type="text" class="form-control" id="tdistrict" name="tdistrict" required placeholder="kathmandu">
-  </div>
+ <div class="col-md-4">
+      <label for="inputState" class="form-label" >Province</label>
+      <select id="inputState" class="form-select" auto-complete="off" name="tprovince" required>
+      <option selected>Choose...</option>
+      <?php for($i=0; $i<=6;$i++){?><option value="<?php echo $provinces[$i]?>"><?php echo $provinces[$i]?></option><?php }?>
+        
+      </select>
+    </div>
+   <div class="col-md-4">
+      <label for="inputState" class="form-label" >District</label>
+      <select id="inputState" class="form-select"name="tdistrict" auto-complete="off" required>
+      <option selected>Choose...</option>
+      <?php for($i=1; $i<=count($districts)-1;$i++){?><option value="<?php echo $districts[$i]?>"><?php echo $districts[$i]?></option><?php }?>
+        
+      </select>
+    </div>
   <div class="col-md-4">
     <label for="lname" class="form-label">Municipality/vdc</label>
-    <input type="text" class="form-control" id="tmun" name="tmun" required placeholder="kathmandu">
+    <input type="text" class="form-control" autocomplete="off" id="tmun" name="tmun" required placeholder="kathmandu">
+      <span class="error"></span>
   </div>
   
   <div class="col-md-4">
     <label for="inputAddress" class="form-label">Tole/Village</label>
-    <input type="text" class="form-control" id="ttole" name="ttole" required placeholder="kharibot">
+    <input type="text" class="form-control" autocomplete="off" id="ttole" name="ttole" required placeholder="kharibot">
+      <span class="error"></span>
   </div>
   <div class="col-md-4">
     <label for="inputAddress1" class="form-label">Ward no</label>
-    <input type="number" class="form-control" id="tward" name="tward" required placeholder="07" maxlength="2">
+    <input type="number" class="form-control" autocomplete="off" id="tward" name="tward" required placeholder="07" min="00" maxlength="2">
+      
   </div>
   </div>
   <div class="col-12">
@@ -209,80 +319,7 @@
 </div>
 
 </form>
-<script>
-  let sec1=document.getElementById('sec1');
-let sec2=document.getElementById('sec2');
-let prev=document.getElementById('prevbtn');
-let next=document.getElementById('nextbtn');
-let same=document.getElementById('same');
-let pprovince=document.getElementById('pprovince');
-let pdistrict=document.getElementById('pdistrict');
-let pmun=document.getElementById('pmun');
-let ptole=document.getElementById('ptole');
-let pward=document.getElementById('pward');
-let tprovince=document.getElementById('tprovince');
-let tdistrict=document.getElementById('tdistrict');
-let tmun=document.getElementById('tmun');
-let ttole=document.getElementById('ttole');
-let tward=document.getElementById('tward');
 
-prev.addEventListener('click',function(){
-
-sec2.style.display="none";
-sec1.style.display="block";
-});
-next.addEventListener('click',function(){
-  sec1.style.display="none";
-sec2.style.display="block";
-
-});
-
-same.addEventListener('click',function(){
-  if(same.checked){
-  tprovince.value=pprovince.value;
-  tdistrict.value=pdistrict.value;
-  tmun.value=pmun.value;
-  ttole.value=ptole.value;
-  tward.value=pward.value;
-
-}else{
-  tprovince.value="";
-  tdistrict.value="";
-  tmun.value="";
-  ttole.value="";
-  tward.value="";
-}
-});
-// let numberValue = document.getElementById("form").number.value;
-// document.getElementById("form").submit.addEventListener(("click",()=>{
-// if(numberValue<0){
-//   alert("number mustn't be 0")
-// } }));
-
-
-    let sdate = document.getElementsByName('dob')[0];
-    sdate.addEventListener('change',()=>{
-      let d = new Date();
-      let m = d.getMonth() + 1 < 10 ? '0' + (d.getMonth() + 1) : '' + d.getMonth();
-      let dd = d.getDate() < 10 ? '0' + d.getDate() : '' + d.getDate();
-      let string = `${d.getFullYear()}-${m}-${dd}`;
-      
-      if (sdate.value > string) {
-        sdate.disabled = true;
-        sdate.value='';
-        alert('you cannot pick the date beyond today \n Retry after 3 sec');
-        setTimeout(()=>{
-          sdate.disabled=false;
-        },3000)
-        
-      }
-      
-
-    });
-
-
-  
-</script>
 <script src="validate.js"></script>
 
 </body>

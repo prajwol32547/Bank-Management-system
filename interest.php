@@ -20,6 +20,7 @@ $time=date("H:i:s");
 $timeexplode=explode(":",$time);
 $timegone=abs($newdate[2]-$prevdate[2]);
 // print_r($timeexplode);
+// echo $newdate[1]-$prevdate[1];
 if($newdate[1]-$prevdate[1]==0){
 if($timegone>0){
     
@@ -27,7 +28,7 @@ $newinterest=(float)$balance*0.00011111111*$timegone+(float)$interest;
         include 'connect.php';
         $sql="UPDATE central SET interest=$newinterest,intdate=current_timestamp() WHERE email='$email'";
         $res=$conn->query($sql);
-        if ($res){
+        if ($res->num_rows>0){
             $_SESSION['interest']=round($newinterest,3);
             $_SESSION['intdate']=$d;
             // echo "succesful";
@@ -38,7 +39,7 @@ $newinterest=(float)$balance*0.00011111111*$timegone+(float)$interest;
     }
 }
 
-else if($newdate[1]-$prevdate[1]==1){
+else if($newdate[1]-$prevdate[1]>0){
 $newbalance=(float)$_SESSION['interest']+(float)$balance;
 $sql1="UPDATE central SET balance=$newbalance,intdate=current_timestamp(),interest=0 WHERE email='$email'";
 $res1=$conn->query($sql1);

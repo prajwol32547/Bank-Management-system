@@ -6,7 +6,7 @@ if(isset($_POST['load'])){
     include "connect.php";
     $sql="SELECT balance FROM central WHERE id=$number";
     $res=$conn->query($sql);
-    if($res){
+    if($res->num_rows>0){
       while($row=$res->fetch_assoc()){
           $oldbalance=$row["balance"];
           $newbalance=(int)$oldbalance+(int)$amount;
@@ -16,7 +16,7 @@ if(isset($_POST['load'])){
          
           }
           else{
-              echo "oops";
+              echo "Account number does not exists";
           }
       }
 

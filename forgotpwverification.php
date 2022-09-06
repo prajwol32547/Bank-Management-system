@@ -61,7 +61,7 @@ else{
 </div>
  <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"> OTP</label>
-  <input type="number" name="rotp"class="form-control" id="formGroupExampleInput" placeholder="otp">
+  <input type="number" name="rotp"class="form-control" id="formGroupExampleInput" placeholder="otp" Maxlength="4">
 </div>
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label"> Email</label>

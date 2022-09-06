@@ -21,6 +21,11 @@ session_start();
     .border1:hover{
         transform: scale(1.1);
     }
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
     @media screen and (max-width:640px) {
         .border1{
         border:none;
@@ -44,7 +49,7 @@ session_start();
            <input type="text" class="form-control" placeholder="receiver last name" aria-label="Username" aria-describedby="basic-addon1" name="receiverlast" required></div></div>
            
            <br><p>account number</p> 
-           <input type="text" class="form-control" placeholder="account number" aria-label="Username" aria-describedby="basic-addon1" name="number"required>
+           <input type="number" class="form-control" placeholder="account number" min="0" aria-label="Username" aria-describedby="basic-addon1" name="number"required>
 <br> <p>Bank</p>
 <select class="form-select" aria-label="Default select example">
     <option selected>select bank</option>
@@ -53,13 +58,18 @@ session_start();
     <option value="3"name="NIC bank">NIC bank</option>
   </select>
 <br><p>amount</p> 
-<input type="number" class="form-control" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1" name="paisa" required>
+<input type="number" class="form-control" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1" min="10" name="paisa" required>
          
         <button class="bg-primary text-white border1 rounded-pill" name="money" >send money</button>
         </div>
 </form>
     </div>
-
+<script>
+    let rf=document.getElementsByName('receiverfirst')[0];
+    rf.addEventListener('change',()=>{
+        console.log('change');
+    })
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

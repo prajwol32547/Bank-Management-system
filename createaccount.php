@@ -1,3 +1,101 @@
+<?php error_reporting(E_ERROR|E_PARSE);
+session_start();?>
+<?php 
+if(!isset($_SESSION['memail'])){
+  header("location:signin");
+}
+
+$provinces = array(
+                "bagmati",
+                "gandaki",
+                "karnali",
+                "lumbini",
+                "province1",
+                "province2",
+                "sudurpaschim"
+            );
+
+$districts = array(
+					"achham",
+					"arghakhanchi",
+					"baglung",
+					"baitadi",
+					"bajhang",
+					"bajura",
+					"banke",
+					"bara",
+					"bardiya",
+					"bhaktapur",
+					"bhojpur",
+					"chitwan",
+					"dadeldhura",
+					"dailekh",
+					"dang deukhuri",
+					"darchula",
+					"dhading",
+					"dhankuta",
+					"dhanusa",
+					"dholkha",
+					"dolpa",
+					"doti",
+					"gorkha",
+					"gulmi",
+					"humla",
+					"ilam",
+					"jajarkot",
+					"jhapa",
+					"jumla",
+					"kailali",
+					"kalikot",
+					"kanchanpur",
+					"kapilvastu",
+					"kaski",
+					"kathmandu",
+					"kavrepalanchok",
+					"khotang",
+					"lalitpur",
+					"lamjung",
+					"mahottari",
+					"makwanpur",
+					"manang",
+					"morang",
+					"mugu",
+					"mustang",
+					"myagdi",
+					"nawalparasi",
+					"nuwakot",
+					"okhaldhunga",
+					"palpa",
+					"panchthar",
+					"parbat",
+					"parsa",
+					"pyuthan",
+					"ramechhap",
+					"rasuwa",
+					"rautahat",
+					"rolpa",
+					"rukum",
+					"rupandehi",
+					"salyan",
+					"sankhuwasabha",
+					"saptari",
+					"sarlahi",
+					"sindhuli",
+					"sindhupalchok",
+					"siraha",
+					"solukhumbu",
+					"sunsari",
+					"surkhet",
+					"syangja",
+					"tanahu",
+					"taplejung",
+					"terhathum",
+					"udayapur"
+                
+            );
+
+
+?>
 <html>
 
 <head>
@@ -58,6 +156,11 @@
   
   
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 </style>
 
 </head>
@@ -92,7 +195,7 @@
     
     <div class="col-md-4">
       <label for="inputAddress" class="form-label">Number</label>
-      <input type="text" class="form-control" name="number" placeholder="" required Maxlength="10" Minlength="10">
+      <input type="number" class="form-control" name="number" placeholder="" required max="9999999999" min="9000000000">
     </div>
     <div class="col-md-4">
       <label for="inputAddress1" class="form-label">Email</label>
@@ -160,35 +263,11 @@
         <option value="fixeddeposit">Fixed Deposit</option>
       </select>
     </div>
-   <div class="col-12 my-3">
-    <a href="#sec2"class="aa my-3" style="float:right;"id="nextbtn" >Next -></a>
-   </div>
+   
   </div>
-</div>
-    <div class="forms"id="sec2">
-    <div class="row g-3 py-2 ">
-    <label for="" class="form-label"><b>(Permanent Address)</b></label>
-  <div class="col-md-4">
-    <label for="firstname" class="form-label">Province </label>
-    <input type="text" class="form-control" name="perprovince" required placeholder="bagmati" id="pprovince">
-  </div>
-  <div class="col-md-4">
-    <label for="mnamw" class="form-label">District</label>
-    <input type="text" class="form-control" name="perdistrict" required placeholder="kathmandu" id="pdistrict">
-  </div>
-  <div class="col-md-4">
-    <label for="lname" class="form-label">Municipality/vdc</label>
-    <input type="text" class="form-control" name="permun" required placeholder="kathmandu" id="pmun">
-  </div>
-  
-  <div class="col-md-4">
-    <label for="inputAddress" class="form-label">Tole/Village</label>
-    <input type="text" class="form-control" name="pertole" placeholder="kharibot"required id="ptole">
-  </div>
-  <div class="col-md-4">
-    <label for="inputAddress1" class="form-label">Ward no</label>
-    <input type="text" class="form-control" name="perward" placeholder="07" required id="pward">
-  </div>
+
+    
+   
  
   <label for="" class="form-label"><b>(Temporary address)</b></label>
   <!-- <div class="form-check">
@@ -197,15 +276,25 @@
      same as permananent
 </label>
 </div> -->
+<br>
+    <div class="row g-3 py-0 ">
+         <div class="col-md-4">
+      <label for="inputState" class="form-label" >Province</label>
+      <select id="inputState" class="form-select"name="tprovince" required>
+      <option selected>Choose...</option>
+      <?php for($i=0; $i<=6;$i++){?><option value="<?php echo $provinces[$i]?>"><?php echo $provinces[$i]?></option><?php }?>
+        
+      </select>
+    </div>
+       <div class="col-md-4">
+      <label for="inputState" class="form-label" >District</label>
+      <select id="inputState" class="form-select"name="tdistrict" required>
+      <option selected>Choose...</option>
+      <?php for($i=1; $i<=count($districts)-1;$i++){?><option value="<?php echo $districts[$i]?>"><?php echo $districts[$i]?></option><?php }?>
+        
+      </select>
+    </div>
 
-  <div class="col-md-4">
-    <label for="firstname" class="form-label">Province </label>
-    <input type="text" class="form-control" name="tprovince" required placeholder="bagmati" id="tprovince">
-  </div>
-  <div class="col-md-4">
-    <label for="mnamw" class="form-label">District</label>
-    <input type="text" class="form-control" name="tdistrict" required placeholder="kathmandu" id="tdistrict">
-  </div>
   <div class="col-md-4">
     <label for="lname" class="form-label">Municipality/vdc</label>
     <input type="text" class="form-control" name="tmun" required placeholder="kathmandu" id="tmun">
@@ -217,12 +306,12 @@
   </div>
   <div class="col-md-4">
     <label for="inputAddress1" class="form-label">Ward no</label>
-    <input type="text" class="form-control" name="tward" placeholder="07" required id="tward">
+    <input type="number" class="form-control" name="tward" min="0" placeholder="07" required id="tward">
   </div>
   
   <div class="col-md-4">
     <label for=" " class="form-label">Deposit</label>
-    <input type="text" class="form-control" name="deposit" required placeholder="200">
+    <input type="number" class="form-control" name="deposit" min="10" required placeholder="200">
   </div>
  
 <div class="col-12">
@@ -234,22 +323,17 @@
   </div>
 </div>
 <br>
-<div class="d-flex justify-content-between">
- <a href="#sec1" class="aa px-2 py-2 my-3"id="prevbtn" ><- previous</a>
-  
+<div class="d-flex justify-content-end">
+
+
    
   <button class="btn btn-success px-2 py-2 my-3"type="submit" name="submitbtn">create account</button>
     </div>
 </div>
-  </div>
+
 </form>
 
 
 
-<script type="text/javascript">
-function clickedfunc(){
- alert('habibi');
-}
-</script>
 </body>
 </html>

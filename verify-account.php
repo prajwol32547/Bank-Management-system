@@ -24,11 +24,6 @@ $profession=strip_tags($_POST['profession']);
 $soi=strip_tags($_POST['sourceofincome']);
 $branch=strip_tags($_POST['branch']);
 $accounttype=strip_tags($_POST['accounttype']);
-$perprovince=strip_tags($_POST['perprovince']);
-$perdistric=strip_tags($_POST['perdistrict']);
-$permunicipality=strip_tags($_POST['permun']);
-$perward=strip_tags($_POST['perward']);
-$pertole=strip_tags($_POST['pertole']);
 $tprovince=strip_tags($_POST['tprovince']);
 $tdistric=strip_tags($_POST['tdistrict']);
 $tmunicipality=strip_tags($_POST['tmun']);
@@ -73,11 +68,12 @@ $row2 =$res2->num_rows;
 $row=$res->num_rows;
 if($row==0 && $row2==0){
 
-$sql1="INSERT INTO unverifiedaccount (firsname, middlename, lastname, curentnumber, email, fathername, citizenship, citizennumber, fathercitizenship, dob, recentphoto, profession, sourceofincome, branch, accountype, permanentprovince, permanentdistrict, permanentmun, permanentward, permanenttole, temporaryprovince, temporarydistrict, temporarymun, temporaryward, temporarytole, ibank) VALUES ('$fname', '$mname', '$lname', '$currnumber', '$email', '$fathername', '$dest', '$citizennumber', '$dest1', '$newDate', '$dest2', '$profession', '$soi', '$branch', '$accounttype', '$perprovince', '$perdistric', '$permunicipality', '$perward', '$pertole', '$tprovince', '$tdistric', '$tmunicipality', '$tward', '$ttole', '$ibank');";
+$sql1="INSERT INTO unverifiedaccount (firsname, middlename, lastname, curentnumber, email, fathername, citizenship, citizennumber, fathercitizenship, dob, recentphoto, profession, sourceofincome, branch, accountype, temporaryprovince, temporarydistrict, temporarymun, temporaryward, temporarytole, ibank) VALUES ('$fname', '$mname', '$lname', '$currnumber', '$email', '$fathername', '$dest', '$citizennumber', '$dest1', '$newDate', '$dest2', '$profession', '$soi', '$branch', '$accounttype', '$tprovince', '$tdistric', '$tmunicipality', '$tward', '$ttole', '$ibank');";
 $res1=$conn->query($sql1);
 if($res1){
     
     include 'success.php';
+    header("Refresh:5, url:signin");
     ?>
     <script>
         alert('you will get notified about your account activation via email `\n` Thank you');
