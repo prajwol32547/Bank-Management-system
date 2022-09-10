@@ -21,7 +21,7 @@ if($id==$account){
   echo "self transfer is not allowed";
 }
 else if((int)$amount<0 || (int)$amount>$blcdata){
-  echo "amount must be greater than 0 and your current balance ";
+  echo "amount must be greater than 10 and lower than your current balance ";
 }
 else{
 $sql="SELECT * FROM central WHERE logid='$account' AND fname='$receiverfirst' AND lname='$receiverlast'";

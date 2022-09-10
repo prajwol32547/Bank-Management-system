@@ -10,7 +10,7 @@ $address = $_POST['address'];
 
 if(isset($_POST['click']))
 {
-    $date_clicked = date('Y-m-d H:i:s');
+    $date_clicked = date('y-m-d H:i:s');
 }
 
 $epoch = strtotime($date_clicked);

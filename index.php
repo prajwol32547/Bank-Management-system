@@ -377,7 +377,7 @@ font-family: Arial, Helvetica, sans-serif;
               <p class="card-text">A current account, also known as financial account is a type of deposit account
                 maintained by individuals who carry out significantly higher number of transactions with banks on a
                 regular basis. </p>
-              <a href="registrationform.html" class="btn btn-primary">create account</a>
+              <a href="registrationform" class="btn btn-primary">create account</a>
             </div>
           </div>
         </div>
@@ -389,7 +389,7 @@ font-family: Arial, Helvetica, sans-serif;
               <h5 class="card-title">saving account</h5> 
               <p class="card-text">
                 An account you have with a bank for deposits which is an interest-bearing account, and even though they do not typically offer large interest rates, their dependability and security make it a smart choice for putting money away.</p>
-              <a href="registrationform.html" class="btn btn-primary">create account</a>
+              <a href="registrationform" class="btn btn-primary">create account</a>
             </div>
           </div>
         </div>
@@ -401,7 +401,7 @@ font-family: Arial, Helvetica, sans-serif;
               <p class="card-text">
                 A fixed deposit, also known as an FD, is an investment instrument offered by banks, as well as
                 non-banking financial companies (NBFC) to their customers to help them save money. It has more interest rate</p>
-              <a href="registrationform.html" class="btn btn-primary">create account</a>
+              <a href="registrationform" class="btn btn-primary">create account</a>
             </div>
           </div>
         </div>

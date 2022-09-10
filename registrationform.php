@@ -152,6 +152,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+.error{
+  color:red;
+}
 </style>
 </head>
 
@@ -229,8 +232,7 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="col-md-6">
       <label for="inputState" class="form-label">Profession</label>
       <select id="inputState" class="form-select" name="profession" required>
-        <option selected>Choose..</option>
-        
+         
         <option value="student">student</option>
         <option value="housewife">house wife</option>
         <option value="teaching">teaching</option>
@@ -240,7 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="col-md-4">
       <label for="inputState" class="form-label">Source of income</label>
       <select id="inputState" class="form-select" name="sourceofincome"required>
-        <option selected>Choose...</option>
+       
         <option value="profession">profession</option>
         <option value="grant">grant</option>
       </select>
@@ -249,7 +251,7 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="col-md-4">
       <label for="inputState" class="form-label">Preferred branch</label>
       <select id="inputState" class="form-select" name="branch" required>
-        <option selected>Choose...</option>
+      
         <option value="simaltar">Simaltar</option>
         <option value="kapan">Kapan</option>
         <option value="boudha">Boudha</option>
@@ -258,7 +260,6 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="col-md-4">
       <label for="inputState" class="form-label">Account type</label>
       <select id="inputState" class="form-select"name="accounttype" required>
-        <option selected>Choose...</option>
         <option value="current">Current</option>
         <option value="saving">Saving</option>
         <option value="fixeddeposit">Fixed Deposit</option>
@@ -269,7 +270,7 @@ input[type=number]::-webkit-outer-spin-button {
  <div class="col-md-4">
       <label for="inputState" class="form-label" >Province</label>
       <select id="inputState" class="form-select" auto-complete="off" name="tprovince" required>
-      <option selected>Choose...</option>
+      
       <?php for($i=0; $i<=6;$i++){?><option value="<?php echo $provinces[$i]?>"><?php echo $provinces[$i]?></option><?php }?>
         
       </select>
@@ -277,7 +278,7 @@ input[type=number]::-webkit-outer-spin-button {
    <div class="col-md-4">
       <label for="inputState" class="form-label" >District</label>
       <select id="inputState" class="form-select"name="tdistrict" auto-complete="off" required>
-      <option selected>Choose...</option>
+      
       <?php for($i=1; $i<=count($districts)-1;$i++){?><option value="<?php echo $districts[$i]?>"><?php echo $districts[$i]?></option><?php }?>
         
       </select>

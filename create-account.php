@@ -40,7 +40,6 @@ header("Refresh:5,url=employee");
 }
 }
 
-
 $filename=$fathercitizen['name'];
 $filepath=$fathercitizen['tmp_name'];
 $fileerror=$fathercitizen['error'];

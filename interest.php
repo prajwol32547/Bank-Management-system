@@ -29,12 +29,12 @@ $newinterest=(float)$balance*0.00011111111*$timegone+(float)$interest;
         $sql="UPDATE central SET interest=$newinterest,intdate=current_timestamp() WHERE email='$email'";
         $res=$conn->query($sql);
         if ($res->num_rows>0){
-            $_SESSION['interest']=round($newinterest,3);
+            $_SESSION['interest']=round($newinterest,2);
             $_SESSION['intdate']=$d;
             // echo "succesful";
             }
             else{
-                echo "cant execute 1";
+                // echo "cant execute 1";
             }
     }
 }
